@@ -57,7 +57,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get the IP Address.
      *
-     * @return mixed
+     * @return string|null
      */
     public function getIp()
     {
@@ -67,7 +67,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get the City name.
      *
-     * @return mixed
+     * @return string|null
      */
     public function getCity()
     {
@@ -77,7 +77,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get teh region name.
      *
-     * @return mixed
+     * @return string|null
      */
     public function getRegion()
     {
@@ -87,7 +87,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get the country name.
      *
-     * @return mixed
+     * @return string|null
      */
     public function getCountry()
     {
@@ -97,7 +97,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get the Latitude value.
      *
-     * @return float
+     * @return float|null
      */
     public function getLatitude()
     {
@@ -107,7 +107,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     /**
      * Get the Longitude value.
      *
-     * @return float
+     * @return float|null
      */
     public function getLongitude()
     {
