@@ -3,14 +3,14 @@ Laravel GeoLocation Package
 
 Laravel package to get the details about Region, City and Country for a given IP Address.
 
-This package is a wrapper for IpInfo Provider, however we have plans to implement a driver for 
+This package is a wrapper for [IpInfo](https://ipinfo.io) Provider, however we have plan to implement a driver for 
 MaxMind GeoIP2 databases.
 
 ### Install
 
     composer require adrianorosa/laravel-geolocation
 
-> This package supports the latest version of Laravel, for now 5.8+
+> This package supports the latest version of Laravel, for now 5.8+ was tested, but older versions should work fine.
 
 As of Laravel 5.5 there is no need to add the ServiceProvider within the `AppServiceProvider` array. 
 Laravel loads this provider using Package Discovery.
@@ -20,13 +20,38 @@ Laravel loads this provider using Package Discovery.
 There is no need to additional setup to start using, once you install it via composer you can call the Facade:
 
 ```php
+<?php
+use Adrianorosa\GeoLocation\GeoLocation;
+
 $details = GeoLocation::lookup('8.8.8.8');
 
-echo $details->getCity()
+echo $details->getIp();
+// 8.8.8.8
+
+echo $details->getCity();
+// Mountain View
+
+echo $details->getRegion();
 // California
 
-echo $details->getCountry()
+echo $details->getCountry();
 // United States
+
+echo $details->getLatitude();
+// 37.386
+
+echo $details->getLongitude();
+// -122.0838
+
+var_dump($details->toArray());
+// Array
+// (
+//  [city] => Mountain View
+//  [region] => California
+//  [country] => United States
+//  [latitude] => 37.386
+//  [longitude] => -122.0838
+//)
 ``` 
 
 ## Override Configuration and translations
