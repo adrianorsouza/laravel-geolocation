@@ -1,0 +1,44 @@
+{
+  "name": "adrianorosa/laravel-geolocation",
+  "description": "Laravel Geo Location package to get details for a given Ip Address",
+  "keywords": ["geolocation", "ipinfo", "geoip", "laravel", "laravel-geolocation"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Adriano Rosa",
+      "email": "info@adrianorosa.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.2",
+    "ext-openssl": "*",
+    "ext-json": "*",
+    "illuminate/support": "5.8.*",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.8",
+    "phpunit/phpunit": "^8.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Adrianorosa\\GeoLocation\\": "src"
+    },
+    "files": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Adrianorosa\\GeoLocation\\Tests\\": "tests/"
+    }
+  },
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Adrianorosa\\GeoLocation\\GeoLocationServiceProvider"
+      ]
+    }
+  }
+}
