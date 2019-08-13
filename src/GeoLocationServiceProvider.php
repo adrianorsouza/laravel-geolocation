@@ -37,11 +37,11 @@ class GeoLocationServiceProvider extends ServiceProvider implements DeferrablePr
     {
         $this->publishes([
             __DIR__ . '/../config/geolocation.php' => config_path('geolocation.php'),
-        ], 'config');
+        ], 'geolocation-config');
 
         $this->publishes([
             __DIR__ . '/../translations' => resource_path('lang/vendor/geolocation')
-        ], 'translations');
+        ], 'geolocation-translations');
 
         $this->loadTranslationsFrom(__DIR__ . '/../translations', 'geolocation');
 
