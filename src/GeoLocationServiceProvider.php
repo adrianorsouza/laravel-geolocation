@@ -46,7 +46,9 @@ class GeoLocationServiceProvider extends ServiceProvider implements DeferrablePr
         $this->loadTranslationsFrom(__DIR__ . '/../translations', 'geolocation');
 
         if ($this->app->runningInConsole()) {
-            //$this->commands();
+            $this->commands([
+                Console\GeoLocationCommand::class,
+            ]);
         }
     }
 

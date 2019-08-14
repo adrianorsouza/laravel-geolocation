@@ -54,6 +54,20 @@ var_dump($details->toArray());
 //)
 ``` 
 
+### Console Command
+
+To display details about an Ip or Your current network Ip Address you may use the artisan command: 
+
+```bash
+php artisan geolocation:lookup --ip 8.8.8.8
+
++---------+---------------+------------+---------------+----------+-----------+
+| ip      | city          | region     | country       | latitude | longitude |
++---------+---------------+------------+---------------+----------+-----------+
+| 8.8.8.8 | Mountain View | California | United States | 37.386   | -122.0838 |
++---------+---------------+------------+---------------+----------+-----------+
+```
+
 ## Override Configuration and translations
 
 This package comes with a little configuration for IpInfo and translations for Country Names.
