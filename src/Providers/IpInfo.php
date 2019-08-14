@@ -46,7 +46,8 @@ class IpInfo implements LookupInterface
     }
 
     /**
-     * @param $ipAddress
+     * Filter the API response down to specific fields or objects
+     * by adding the field or object name to the URL.
      *
      * @param  string $responseFilter
      *
