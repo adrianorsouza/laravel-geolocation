@@ -22,4 +22,8 @@
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+  <php>
+    <env name="GEOLOCATION_IPINFO_ACCESS_TOKEN" value="LftDDkrDdJtxhA"/>
+    <env name="GEOLOCATION_CACHE_TTL" value="4096"/>
+  </php>
 </phpunit>
