@@ -28,7 +28,7 @@ class GeoLocationTest extends TestCase
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
         $ipAddress = '8.8.8.8';
-        $data = '{"ip":"'.$ipAddress.'","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}';
+        $data = json_decode('{"ip":"' . $ipAddress . '","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}', true);
         $cache->put($ipAddress, $data, 2000);
 
         $this->app->setLocale('en');
@@ -49,7 +49,7 @@ class GeoLocationTest extends TestCase
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
         $ipAddress = '8.8.8.8';
-        $data = '{"ip":"'.$ipAddress.'","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}';
+        $data = json_decode('{"ip":"' . $ipAddress . '","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}', true);
         $cache->put($ipAddress, $data, 2000);
 
         $this->app->setLocale('pt_BR');

@@ -14,8 +14,9 @@ class IpInfoTest extends TestCase
         $cache = $this->app->get('cache')->getStore();
 
         $ipAddress = '127.0.0.1';
+        $data = json_decode('{"ip": "127.0.0.1","city": "X","region": "X", "country": "XX","loc": "-23.5475,-46.6361"}', true);
 
-        $cache->put($ipAddress, '{"ip": "127.0.0.1","city": "X","region": "X", "country": "XX","loc": "-23.5475,-46.6361"}', 2000);
+        $cache->put($ipAddress, $data, 2000);
         $provider = new IpInfo(new Client(), $this->app->get('cache')->getStore());
 
         $detail = $provider->lookup($ipAddress);
