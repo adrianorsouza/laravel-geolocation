@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static|GeoLocationDetails lookup($ipAddress)
  *
- * @see \Adrianorosa\GeoLocation\IpInfo
+ * @see \Adrianorosa\GeoLocation\Providers\IpInfo
  */
 class GeoLocation extends Facade
 {
