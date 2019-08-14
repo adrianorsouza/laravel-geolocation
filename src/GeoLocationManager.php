@@ -68,7 +68,6 @@ class GeoLocationManager
         if ($provider) {
             $this->providers[$name] = $this->resolve($provider);
         }
-
     }
 
     /**

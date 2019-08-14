@@ -14,7 +14,6 @@ use Adrianorosa\GeoLocation\Contracts\LookupInterface;
  * @author Adriano Rosa <https://adrianorosa.com>
  * @date 2019-08-13 13:55
  *
- * @package Adrianorosa\GeoLocation
  */
 class IpInfo implements LookupInterface
 {
@@ -49,7 +48,7 @@ class IpInfo implements LookupInterface
      * Filter the API response down to specific fields or objects
      * by adding the field or object name to the URL.
      *
-     * @param  string|null $ipAddress      An Ip or 'me' For yourself IP
+     * @param  string|null $ipAddress  An Ip or 'me' For yourself IP
      *
      * @param  string $responseFilter Options are: (city / org / geo)
      *
@@ -64,7 +63,6 @@ class IpInfo implements LookupInterface
         $filter = $responseFilter !== 'geo' ? 'geo' : $responseFilter;
 
         if (is_null($data = $this->cache->get($ipAddress))) {
-
             $endpoint = static::BASEURL;
             $accessToken = config('geolocation.providers.ipinfo.access_token');
 
@@ -73,16 +71,20 @@ class IpInfo implements LookupInterface
             }
 
             try {
-
                 $response = $this->client->get(
-                    $endpoint, [
+                    $endpoint,
+                    [
                         'headers' => [
                             'Authorization' => 'Bearer ' . $accessToken,
                             'Accept' => 'application/json'
                         ],
-                ]);
+                    ]
+                );
 
-                $data = json_decode($result = $response->getBody()->getContents(), 1);
+                $data = json_decode(
+                    $result = $response->getBody()->getContents(),
+                    true
+                );
 
                 // Sometimes the response can be an string which will result to
                 // a JSON_ERROR for this cases we
@@ -91,11 +93,11 @@ class IpInfo implements LookupInterface
                 }
 
                 $this->cache->put(
-                    $ipAddress, $data, config('geolocation.cache.ttl')
+                    $ipAddress,
+                    $data,
+                    config('geolocation.cache.ttl')
                 );
-
             } catch (GuzzleException | \Exception $e) {
-
                 throw new GeoLocationException($e->getMessage());
             }
         }

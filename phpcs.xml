@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="GeoLocation Coding Standard">
+  <description>The coding standard</description>
+
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+
+  <rule ref="PSR2">
+    <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma"/>
+  </rule>
+
+  <file>src</file>
+
+  <arg name="report" value="diff"/>
+</ruleset>

@@ -28,7 +28,8 @@ class GeoLocationServiceProvider extends ServiceProvider implements DeferrablePr
         $this->app->singleton('geolocation', function ($app) {
             /**@var \Illuminate\Foundation\Application $app*/
             return new GeoLocationManager(
-                config('geolocation'), $app->get('cache')
+                config('geolocation'),
+                $app->get('cache')
             );
         });
     }
@@ -59,5 +60,4 @@ class GeoLocationServiceProvider extends ServiceProvider implements DeferrablePr
     {
         return ['geolocation'];
     }
-
 }
