@@ -40,6 +40,7 @@ class GeoLocationTest extends TestCase
         $this->assertEquals('Mountain View', $info->getCity());
         $this->assertEquals('California', $info->getRegion());
         $this->assertEquals('United States', $info->getCountry());
+        $this->assertEquals('US', $info->getCountryCode());
         $this->assertIsFloat($info->getLatitude());
         $this->assertIsFloat($info->getLongitude());
     }
@@ -58,6 +59,7 @@ class GeoLocationTest extends TestCase
 
         $this->assertInstanceOf(GeoLocationDetails::class, $info);
         $this->assertEquals('Estados Unidos', $info->getCountry());
+        $this->assertEquals('US', $info->getCountryCode());
     }
 
     public function testGelLocationException()

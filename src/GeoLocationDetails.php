@@ -35,6 +35,11 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     protected $country;
 
     /**
+     * @var string
+     */
+    protected $countryCode;
+
+    /**
      * @var float
      */
     protected $latitude;
@@ -95,6 +100,16 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     }
 
     /**
+     * Get the country ISO Code.
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        return $this->countryCode;
+    }
+
+    /**
      * Get the Latitude value.
      *
      * @return float|null
@@ -128,6 +143,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
         foreach ((array) $data as $key => $value) {
             if (property_exists($this, $key)) {
                 if ($key === 'country') {
+                    $this->countryCode = $value;
                     $this->{$key} = $this->formatCountry($value);
                 } else {
                     $this->{$key} = $value;
@@ -178,6 +194,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
             'city' => $this->city,
             'region' => $this->region,
             'country' => $this->country,
+            'countryCode' => $this->countryCode,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
         ];

@@ -49,6 +49,7 @@ var_dump($details->toArray());
 //  [city] => Mountain View
 //  [region] => California
 //  [country] => United States
+//  [countryCode] => US
 //  [latitude] => 37.386
 //  [longitude] => -122.0838
 //)
@@ -61,11 +62,11 @@ To display details about an Ip or Your current network Ip Address you may use th
 ```bash
 php artisan geolocation:lookup --ip 8.8.8.8
 
-+---------+---------------+------------+---------------+----------+-----------+
-| ip      | city          | region     | country       | latitude | longitude |
-+---------+---------------+------------+---------------+----------+-----------+
-| 8.8.8.8 | Mountain View | California | United States | 37.386   | -122.0838 |
-+---------+---------------+------------+---------------+----------+-----------+
++---------+---------------+------------+----------------+-------------+----------+-----------+
+| ip      | city          | region     | country        | countryCode | latitude | longitude |
++---------+---------------+------------+----------------+-------------+----------+-----------+
+| 8.8.8.8 | Mountain View | California | Estados Unidos | US          | 37.386   | -122.0838 |
++---------+---------------+------------+----------------+-------------+----------+-----------+
 ```
 
 ## Override Configuration and translations

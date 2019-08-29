@@ -19,6 +19,7 @@ class GeoLocationDetailsTest extends TestCase
         $this->assertEquals('Sydney', $details->getCity());
         $this->assertEquals('Sydney', $details->getRegion());
         $this->assertEquals('Australia', $details->getCountry());
+        $this->assertEquals('AU', $details->getCountryCode());
         $this->assertEquals(-23.5475, $details->getLatitude());
         $this->assertEquals(-46.6361, $details->getLongitude());
     }
@@ -33,6 +34,7 @@ class GeoLocationDetailsTest extends TestCase
         $this->assertEquals(null, $details->getCity());
         $this->assertEquals(null, $details->getRegion());
         $this->assertEquals(null, $details->getCountry());
+        $this->assertEquals(null, $details->getCountryCode());
         $this->assertEquals(null, $details->getLatitude());
         $this->assertEquals(null, $details->getLongitude());
     }
@@ -47,6 +49,7 @@ class GeoLocationDetailsTest extends TestCase
         $this->assertEquals(null, $details->getCity());
         $this->assertEquals(null, $details->getRegion());
         $this->assertEquals(null, $details->getCountry());
+        $this->assertEquals(null, $details->getCountryCode());
         $this->assertEquals(null, $details->getLatitude());
         $this->assertEquals(null, $details->getLongitude());
     }
