@@ -20,6 +20,18 @@ use Illuminate\Support\Facades\Facade;
 class GeoLocation extends Facade
 {
     /**
+     * Convenient method to get the translation list of countries codes.
+     *
+     * @param  null $locale
+     *
+     * @return mixed
+     */
+    public static function countries($locale = null)
+    {
+        return static::$app['translator']->get('geolocation::countries', [], $locale);
+    }
+
+    /**
      * @return string
      */
     protected static function getFacadeAccessor()

@@ -70,4 +70,14 @@ class GeoLocationTest extends TestCase
         GeoLocation::lookup('1222398333');
     }
 
+    public function testGetTranslationsOfCountriesLocale()
+    {
+        $en = GeoLocation::countries('en');
+        $this->assertArrayHasKey('US', $en);
+        $this->assertEquals('United States', $en['US']);
+
+        $pt_BR = GeoLocation::countries('pt_BR');
+        $this->assertArrayHasKey('US', $pt_BR);
+        $this->assertEquals('Estados Unidos', $pt_BR['US']);
+    }
 }
