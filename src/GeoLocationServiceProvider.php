@@ -13,7 +13,7 @@ use Illuminate\Contracts\Support\DeferrableProvider;
  *
  * @package Adrianorosa
  */
-class GeoLocationServiceProvider extends ServiceProvider implements DeferrableProvider
+class GeoLocationServiceProvider extends ServiceProvider
 {
 
     /**
