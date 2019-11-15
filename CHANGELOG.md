@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### v0.2.0
+
+- 2019-11-15  - update requirement version constrain for laravel 6.*
+
 ### v0.1.3
 
 - 2019-08-29 - Removed DeferrableProvider interface, now the package is not deferred by default
