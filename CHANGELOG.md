@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### v0.3.0
+
+- 2019-11-15  - update requirement version constrain for laravel 7.0 and 8.0
+
 ### v0.2.0
 
 - 2019-11-15  - update requirement version constrain for laravel 6.*
