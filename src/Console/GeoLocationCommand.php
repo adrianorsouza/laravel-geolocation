@@ -4,7 +4,6 @@ namespace Adrianorosa\GeoLocation\Console;
 
 use Illuminate\Console\Command;
 use Adrianorosa\GeoLocation\GeoLocation;
-use Adrianorosa\GeoLocation\GeoLocationException;
 
 /**
  * Class GeoLocationCommand.
