@@ -7,6 +7,9 @@ use Adrianorosa\GeoLocation\GeoLocationManager;
 
 class GeoLocationManagerTest extends TestCase
 {
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
+     */
     public function testBindManagerInvalidArgumentException()
     {
         $this->expectExceptionMessage('GeoLocation Driver [foo] is not defined.');
@@ -17,6 +20,9 @@ class GeoLocationManagerTest extends TestCase
         ], $this->app->get('cache'));
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
+     */
     public function testBindManagerMethodNotSupportedException()
     {
         $this->expectExceptionMessage('GeoLocation Driver [bar] is not supported.');
@@ -32,6 +38,9 @@ class GeoLocationManagerTest extends TestCase
         ], $this->app->get('cache'));
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
+     */
     public function testCreateUndefinedProvider()
     {
         $this->expectExceptionMessage('GeoLocation Driver [bar] is not defined.');

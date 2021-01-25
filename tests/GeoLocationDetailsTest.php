@@ -6,6 +6,10 @@ use Adrianorosa\GeoLocation\GeoLocationDetails;
 
 class GeoLocationDetailsTest extends TestCase
 {
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::parse()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::toArray()
+     */
     public function testParseData()
     {
         $data = json_decode(
@@ -22,8 +26,23 @@ class GeoLocationDetailsTest extends TestCase
         $this->assertEquals('AU', $details->getCountryCode());
         $this->assertEquals(-23.5475, $details->getLatitude());
         $this->assertEquals(-46.6361, $details->getLongitude());
+
+        $this->assertArrayHasKey('city', $details->toArray());
+        $this->assertArrayHasKey('region', $details->toArray());
+        $this->assertArrayHasKey('country', $details->toArray());
+        $this->assertArrayHasKey('countryCode', $details->toArray());
+        $this->assertArrayHasKey('latitude', $details->toArray());
+        $this->assertArrayHasKey('longitude', $details->toArray());
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getIp()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getCity()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getRegion()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getCountryCode()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getLatitude()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getLongitude()
+     */
     public function testParseBogon()
     {
         $data = json_decode('{"ip": "192.168.10.6","bogon": true}', true);
@@ -39,6 +58,14 @@ class GeoLocationDetailsTest extends TestCase
         $this->assertEquals(null, $details->getLongitude());
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getIp()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getCity()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getRegion()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getCountryCode()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getLatitude()
+     * @covers \Adrianorosa\GeoLocation\GeoLocationDetails::getLongitude()
+     */
     public function testParseNull()
     {
         $data = json_decode('{"invalid JSON ERROR}', true);

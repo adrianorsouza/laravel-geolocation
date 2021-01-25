@@ -12,6 +12,9 @@ namespace Adrianorosa\GeoLocation\Tests;
  */
 class ConfigTest extends TestCase
 {
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocationServiceProvider::boot
+     */
     public function testGetConfigValues()
     {
         $this->assertNotNull(config('geolocation.drivers.default'));

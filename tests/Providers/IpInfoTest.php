@@ -8,6 +8,9 @@ use Adrianorosa\GeoLocation\Providers\IpInfo;
 
 class IpInfoTest extends TestCase
 {
+    /**
+     * @covers \Adrianorosa\GeoLocation\Providers\IpInfo::lookup
+     */
     public function testCacheData()
     {
         /**@var \Illuminate\Cache\ArrayStore $cache*/

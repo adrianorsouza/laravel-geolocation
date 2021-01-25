@@ -8,21 +8,33 @@ use Adrianorosa\GeoLocation\GeoLocationException;
 
 class GeoLocationTest extends TestCase
 {
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testLoadConfig()
     {
         $this->assertNotNull($this->app['config']['geolocation']);
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testProviderBoundInstance()
     {
         $this->assertTrue($this->app->bound('geolocation'));
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testProvider()
     {
         $this->assertTrue($this->app->bound('geolocation'));
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testGeoLocation()
     {
         /**@var \Illuminate\Cache\ArrayStore $cache*/
@@ -45,6 +57,9 @@ class GeoLocationTest extends TestCase
         $this->assertIsFloat($info->getLongitude());
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testCountryLocaleChange()
     {
         /**@var \Illuminate\Cache\ArrayStore $cache*/
@@ -62,6 +77,9 @@ class GeoLocationTest extends TestCase
         $this->assertEquals('US', $info->getCountryCode());
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation
+     */
     public function testGelLocationException()
     {
         $this->app->setLocale('pt_BR');
@@ -70,6 +88,9 @@ class GeoLocationTest extends TestCase
         GeoLocation::lookup('1222398333');
     }
 
+    /**
+     * @covers \Adrianorosa\GeoLocation\GeoLocation::countries()
+     */
     public function testGetTranslationsOfCountriesLocale()
     {
         $en = GeoLocation::countries('en');

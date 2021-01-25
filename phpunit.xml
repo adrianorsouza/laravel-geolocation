@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.3/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
          executionOrder="depends,defects"
@@ -10,18 +10,18 @@
          beStrictAboutTodoAnnotatedTests="true"
          processIsolation="false"
          stopOnFailure="true"
-         verbose="true">
-    <testsuites>
+         verbose="false">
+      <coverage processUncoveredFiles="true">
+          <include>
+            <directory suffix=".php">./src</directory>
+          </include>
+      </coverage>
+      <testsuites>
         <testsuite name="GeoLocation Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src</directory>
-        </whitelist>
-    </filter>
   <php>
     <env name="GEOLOCATION_IPINFO_ACCESS_TOKEN" value="LftDDkrDdJtxhA"/>
     <env name="GEOLOCATION_CACHE_TTL" value="4096"/>
