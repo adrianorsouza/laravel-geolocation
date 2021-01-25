@@ -55,7 +55,7 @@ class IpInfo implements LookupInterface
      * @return \Adrianorosa\GeoLocation\GeoLocationDetails
      * @throws \Adrianorosa\GeoLocation\GeoLocationException
      */
-    public function lookup($ipAddress = null, $responseFilter = 'geo')
+    public function lookup($ipAddress = null, $responseFilter = 'geo'): GeoLocationDetails
     {
         // For instance only `geo` filter are accepted, other type of filters
         // need a different parse approach for GeoLocationDetails which may

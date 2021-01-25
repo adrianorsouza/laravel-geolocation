@@ -2,6 +2,8 @@
 
 namespace Adrianorosa\GeoLocation\Contracts;
 
+use Adrianorosa\GeoLocation\GeoLocationDetails;
+
 /**
  * LookupInterface.
  *
@@ -19,5 +21,5 @@ interface LookupInterface
      *
      * @return \Adrianorosa\GeoLocation\GeoLocationDetails
      */
-    public function lookup($ipAddress, $responseFilter = 'geo');
+    public function lookup($ipAddress, $responseFilter = 'geo'): GeoLocationDetails;
 }
