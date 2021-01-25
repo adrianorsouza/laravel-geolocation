@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+### v1.0.0
+
+- 2021-01-25 - fix composer requirements
+- 2021-01-25 - add return type declaration
+- 2021-01-25 - update README
+- 2021-01-25 - removed unused class
+- 2021-01-25 - upgrade testbench to 6.9 and guzzle to 7.0
+- 2021-01-25 - upgrade tests
+
 ### v0.3.0
 
 - 2019-11-15  - update requirement version constrain for laravel 7.0 and 8.0
