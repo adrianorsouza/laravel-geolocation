@@ -94,7 +94,7 @@ Publish translations
 
 ## Licence
 
-Copyright © 2019, Adriano Rosa  <info@adrianorosa.com>
+Copyright © 2021, Adriano Rosa  <info@adrianorosa.com>
 All rights reserved.
 
 For the full copyright and license information, please view the LICENSE 
