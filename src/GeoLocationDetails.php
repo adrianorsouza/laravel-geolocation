@@ -191,6 +191,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     public function toArray()
     {
         return [
+            'ip' => $this->ip,
             'city' => $this->city,
             'region' => $this->region,
             'country' => $this->country,
