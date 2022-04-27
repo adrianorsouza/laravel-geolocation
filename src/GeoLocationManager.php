@@ -120,9 +120,9 @@ class GeoLocationManager
 
         if (method_exists($this, $driverMethod)) {
             return $this->{$driverMethod}($config);
-        } else {
-            throw new InvalidArgumentException("GeoLocation Driver [{$config['driver']}] is not supported.");
         }
+
+        throw new InvalidArgumentException("GeoLocation Driver [{$config['driver']}] is not supported.");
     }
 
     /**
