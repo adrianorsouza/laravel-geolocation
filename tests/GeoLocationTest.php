@@ -11,7 +11,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testLoadConfig()
+    public function testLoadConfig() : void
     {
         $this->assertNotNull($this->app['config']['geolocation']);
     }
@@ -19,7 +19,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testProviderBoundInstance()
+    public function testProviderBoundInstance() : void
     {
         $this->assertTrue($this->app->bound('geolocation'));
     }
@@ -27,7 +27,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testProvider()
+    public function testProvider() : void
     {
         $this->assertTrue($this->app->bound('geolocation'));
     }
@@ -35,7 +35,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testGeoLocation()
+    public function testGeoLocation() : void
     {
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
@@ -60,7 +60,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testCountryLocaleChange()
+    public function testCountryLocaleChange() : void
     {
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
@@ -80,7 +80,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation
      */
-    public function testGelLocationException()
+    public function testGelLocationException() : void
     {
         $this->app->setLocale('pt_BR');
 
@@ -91,7 +91,7 @@ class GeoLocationTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocation::countries()
      */
-    public function testGetTranslationsOfCountriesLocale()
+    public function testGetTranslationsOfCountriesLocale() : void
     {
         $en = GeoLocation::countries('en');
         $this->assertArrayHasKey('US', $en);
