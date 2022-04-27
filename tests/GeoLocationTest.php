@@ -40,7 +40,13 @@ class GeoLocationTest extends TestCase
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
         $ipAddress = '8.8.8.8';
-        $data = json_decode('{"ip":"' . $ipAddress . '","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}', true);
+        $data = json_decode('{
+            "ip": "' . $ipAddress . '",
+            "city": "Mountain View",
+            "region": "California",
+            "country": "US",
+            "loc": "37.3860, -122.0838"
+        }', true, 512, JSON_THROW_ON_ERROR);
         $cache->put($ipAddress, $data, 2000);
 
         $this->app->setLocale('en');
@@ -65,7 +71,13 @@ class GeoLocationTest extends TestCase
         /**@var \Illuminate\Cache\ArrayStore $cache*/
         $cache = $this->app->get('cache')->getStore();
         $ipAddress = '8.8.8.8';
-        $data = json_decode('{"ip":"' . $ipAddress . '","city":"Mountain View","region":"California","country":"US","loc":"37.3860,-122.0838"}', true);
+        $data = json_decode('{
+            "ip": "' . $ipAddress . '",
+            "city": "Mountain View",
+            "region": "California",
+            "country": "US",
+            "loc": "37.3860, -122.0838"
+        }', true, 512, JSON_THROW_ON_ERROR);
         $cache->put($ipAddress, $data, 2000);
 
         $this->app->setLocale('pt_BR');

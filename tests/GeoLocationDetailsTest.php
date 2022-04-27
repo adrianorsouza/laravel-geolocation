@@ -12,10 +12,14 @@ class GeoLocationDetailsTest extends TestCase
      */
     public function testParseData() : void
     {
-        $data = json_decode(
-            '{"ip": "44.110.29.111","city": "Sydney","region": "Sydney", "country": "AU","loc": "-23.5475,-46.6361","postal": "01000-000"}',
-            true
-        );
+        $data = json_decode('{
+            "ip": "44.110.29.111",
+            "city": "Sydney",
+            "region": "Sydney",
+            "country": "AU",
+            "loc": "-23.5475, -46.6361",
+            "postal": "01000-000"
+        }', true, 512, JSON_THROW_ON_ERROR);
 
         $details = new GeoLocationDetails($data);
 
@@ -45,7 +49,7 @@ class GeoLocationDetailsTest extends TestCase
      */
     public function testParseBogon() : void
     {
-        $data = json_decode('{"ip": "192.168.10.6","bogon": true}', true);
+        $data = json_decode('{"ip": "192.168.10.6","bogon": true}', true, 512, JSON_THROW_ON_ERROR);
 
         $details = new GeoLocationDetails($data);
 
@@ -68,7 +72,7 @@ class GeoLocationDetailsTest extends TestCase
      */
     public function testParseNull() : void
     {
-        $data = json_decode('{"invalid JSON ERROR}', true);
+        $data = json_decode('{}', true, 512, JSON_THROW_ON_ERROR);
 
         $details = new GeoLocationDetails($data);
 
