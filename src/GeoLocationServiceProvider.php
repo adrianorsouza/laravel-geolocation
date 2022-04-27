@@ -3,7 +3,6 @@
 namespace Adrianorosa\GeoLocation;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Support\DeferrableProvider;
 
 /**
  * Class GeoLocationServiceProvider.
