@@ -13,11 +13,14 @@ class GeoLocationManagerTest extends TestCase
     public function testBindManagerInvalidArgumentException() : void
     {
         $this->expectExceptionMessage('GeoLocation Driver [foo] is not defined.');
-        new GeoLocationManager([
+
+        $config = [
             'drivers' => [
                 'default' => 'foo'
             ]
-        ], $this->app->get('cache'));
+        ];
+
+        new GeoLocationManager($config, $this->app->get('cache'));
     }
 
     /**
@@ -26,7 +29,8 @@ class GeoLocationManagerTest extends TestCase
     public function testBindManagerMethodNotSupportedException() : void
     {
         $this->expectExceptionMessage('GeoLocation Driver [bar] is not supported.');
-        new GeoLocationManager([
+
+        $config = [
             'drivers' => [
                 'default' => 'ipinfo'
             ],
@@ -35,7 +39,9 @@ class GeoLocationManagerTest extends TestCase
                     'driver' => 'bar'
                 ]
             ]
-        ], $this->app->get('cache'));
+        ];
+
+        new GeoLocationManager($config, $this->app->get('cache'));
     }
 
     /**
