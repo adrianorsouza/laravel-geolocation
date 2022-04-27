@@ -13,7 +13,7 @@ return [
     */
 
     'drivers' => [
-        'default' => 'ipinfo',
+        'default' => env('GEOLOCATION_DRIVER',  'ipinfo'),
     ],
 
     /*
