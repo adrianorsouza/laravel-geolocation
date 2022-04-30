@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Facade;
 class GeoLocation extends Facade
 {
     /**
-     * Convenient method to get the translation list of countries codes.
+     * Convenient method to get the translation list of country codes.
      *
      * @param  null $locale
      *

@@ -36,7 +36,7 @@ class IpInfo implements LookupInterface
      * IpInfo constructor.
      *
      * @param $client
-     * @param $cache
+     * @param Store $cache
      */
     public function __construct($client, Store $cache)
     {
@@ -57,9 +57,9 @@ class IpInfo implements LookupInterface
      */
     public function lookup($ipAddress = null, $responseFilter = 'geo'): GeoLocationDetails
     {
-        // For instance only `geo` filter are accepted, other type of filters
-        // need a different parse approach for GeoLocationDetails which may
-        // lead to a creation of a new properties and methods to accept strings
+        // For instance only 'geo' filter are accepted. Other types of filters
+        // need a different parse approach for GeoLocationDetails, which may
+        // lead to a creation of new properties and methods to accept strings.
         $filter = $responseFilter !== 'geo' ? 'geo' : $responseFilter;
 
         if (is_null($data = $this->cache->get($ipAddress))) {
@@ -86,8 +86,7 @@ class IpInfo implements LookupInterface
                     true
                 );
 
-                // Sometimes the response can be an string which will result to
-                // a JSON_ERROR for this cases we
+                // Sometimes the response can be a string, which will result in a JSON_ERROR.
                 if (json_last_error() !== JSON_ERROR_NONE) {
                     $data = $result;
                 }

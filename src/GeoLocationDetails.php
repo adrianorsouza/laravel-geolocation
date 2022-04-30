@@ -157,7 +157,7 @@ class GeoLocationDetails implements \JsonSerializable, Arrayable
     }
 
     /**
-     * Parses the coordinates values into latitude and longitude.
+     * Parse the coordinate values into latitude and longitude.
      *
      * @param  string $value
      */

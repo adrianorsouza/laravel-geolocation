@@ -15,7 +15,7 @@ class ConfigTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocationServiceProvider::boot
      */
-    public function testGetConfigValues()
+    public function testGetConfigValues() : void
     {
         $this->assertNotNull(config('geolocation.drivers.default'));
         $this->assertNotNull(config('geolocation.providers.ipinfo.access_token'));

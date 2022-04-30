@@ -18,6 +18,7 @@
     "guzzlehttp/guzzle": "^6.0|^7.0"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-latest",
     "orchestra/testbench": "^6.9",
     "phpunit/phpunit": "^9.5"
   },

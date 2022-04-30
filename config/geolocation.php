@@ -7,19 +7,23 @@ return [
     | Default IP Lookup Driver
     |--------------------------------------------------------------------------
     |
-    | Here we use as a default driver the IpInfo Service, in the future we may
-    | implement the GeoIp by MaxMind as well, for now we just support IpInfo.
+    | As a default driver, we use the IpInfo Service. in the future we may add
+    | support for GeoIp by MaxMind, but for now we will just support IpInfo.
     |
     */
 
     'drivers' => [
-        'default' => 'ipinfo',
+        'default' => env('GEOLOCATION_DRIVER',  'ipinfo'),
     ],
 
     /*
     |--------------------------------------------------------------------------
     | Configurations for each Provider
     |--------------------------------------------------------------------------
+    |
+    | If needed, configuration can be set for each individual provider. Right
+    | there is only one driver available, but additional providers will be
+    | added in future releases.
     |
     */
 
@@ -37,9 +41,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache config when using API request like IpInfo and MaxMind WebService
+    | Cache configuration
     |--------------------------------------------------------------------------
     |
+    | When using API requests like IpInfo and MaxMind WebService the results
+    | can be cached to avoid repeat lookups for the same IP address. This
+    | can greatly speed up the processing of IP addresses and has been
+    | given a suitably high default value of 24 hours.
     */
 
     'cache' => [

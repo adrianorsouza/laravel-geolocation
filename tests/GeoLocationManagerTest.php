@@ -10,23 +10,27 @@ class GeoLocationManagerTest extends TestCase
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
      */
-    public function testBindManagerInvalidArgumentException()
+    public function testBindManagerInvalidArgumentException() : void
     {
         $this->expectExceptionMessage('GeoLocation Driver [foo] is not defined.');
-        new GeoLocationManager([
+
+        $config = [
             'drivers' => [
                 'default' => 'foo'
             ]
-        ], $this->app->get('cache'));
+        ];
+
+        new GeoLocationManager($config, $this->app->get('cache'));
     }
 
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
      */
-    public function testBindManagerMethodNotSupportedException()
+    public function testBindManagerMethodNotSupportedException() : void
     {
         $this->expectExceptionMessage('GeoLocation Driver [bar] is not supported.');
-        new GeoLocationManager([
+
+        $config = [
             'drivers' => [
                 'default' => 'ipinfo'
             ],
@@ -35,13 +39,15 @@ class GeoLocationManagerTest extends TestCase
                     'driver' => 'bar'
                 ]
             ]
-        ], $this->app->get('cache'));
+        ];
+
+        new GeoLocationManager($config, $this->app->get('cache'));
     }
 
     /**
      * @covers \Adrianorosa\GeoLocation\GeoLocationManager::resolve()
      */
-    public function testCreateUndefinedProvider()
+    public function testCreateUndefinedProvider() : void
     {
         $this->expectExceptionMessage('GeoLocation Driver [bar] is not defined.');
         $manager = new GeoLocationManager(config('geolocation'), $this->app->get('cache'));
@@ -51,7 +57,7 @@ class GeoLocationManagerTest extends TestCase
     /**
      * @covers GeoLocationManager::createIpinfoDriver()
      */
-    public function testCreateIpInfoProvider()
+    public function testCreateIpInfoProvider() : void
     {
         $manager = new GeoLocationManager(config('geolocation'), $this->app->get('cache'));
         $this->assertInstanceOf(IpInfo::class, $manager->driver('ipinfo'));
