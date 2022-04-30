@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### v1.1.0
+
+- 2022-04-30 - update Travis config to support PHP `8.0` and `8.1`.
+- 2022-04-27 - added support for Laravel `^9.0`.
+
 ### v1.0.0
 
 - 2021-01-25 - fix composer requirements
