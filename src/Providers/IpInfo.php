@@ -86,8 +86,7 @@ class IpInfo implements LookupInterface
                     true
                 );
 
-                // Sometimes the response can be an string which will result to
-                // a JSON_ERROR for this cases we
+                // Sometimes the response can be a string which will result to a JSON_ERROR
                 if (json_last_error() !== JSON_ERROR_NONE) {
                     $data = $result;
                 }
