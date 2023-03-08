@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### v1.2.0
+
+- 2023-03-07 - update version constraint for require-dev testbench package
+- 2023-03-07 - typo fix
+- 2023-03-07 - Merge pull request #6 from BrekiTomasson/dev-l10-compatibility
+
 ### v1.1.0
 
 - 2022-04-30 - update Travis config to support PHP `8.0` and `8.1`.
