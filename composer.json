@@ -1,44 +1,49 @@
 {
-  "name": "adrianorosa/laravel-geolocation",
-  "description": "Laravel Geo Location package to get details for a given Ip Address",
-  "keywords": ["geolocation", "ipinfo", "geoip", "laravel", "laravel-geolocation"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Adriano Rosa",
-      "email": "info@adrianorosa.com"
-    }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "php": ">=7.2",
-    "ext-openssl": "*",
-    "ext-json": "*",
-    "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0",
-    "guzzlehttp/guzzle": "^6.0|^7.0"
-  },
-  "require-dev": {
-    "orchestra/testbench": "^7.4",
-    "phpunit/phpunit": "^9.5"
-  },
-  "autoload": {
-    "psr-4": {
-      "Adrianorosa\\GeoLocation\\": "src"
+    "name": "adrianorosa/laravel-geolocation",
+    "description": "Laravel Geo Location package to get details for a given Ip Address",
+    "keywords": [
+        "geolocation",
+        "ipinfo",
+        "geoip",
+        "laravel",
+        "laravel-geolocation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adriano Rosa",
+            "email": "info@adrianorosa.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0"
     },
-    "files": [
-    ]
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Adrianorosa\\GeoLocation\\Tests\\": "tests/"
+    "require-dev": {
+        "orchestra/testbench": "^7.4|^9.0",
+        "phpunit/phpunit": "^9.5|^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adrianorosa\\GeoLocation\\": "src"
+        },
+        "files": []
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adrianorosa\\GeoLocation\\Tests\\": "tests/"
+        }
+    },
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Adrianorosa\\GeoLocation\\GeoLocationServiceProvider"
+            ]
+        }
     }
-  },
-  "prefer-stable": true,
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Adrianorosa\\GeoLocation\\GeoLocationServiceProvider"
-      ]
-    }
-  }
 }
