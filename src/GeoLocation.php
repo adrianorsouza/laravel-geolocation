@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Facade;
  *
  * @package Adrianorosa
  *
- * @method static|GeoLocationDetails lookup($ipAddress, $responseFilter = 'geo')
- * @method static|\Adrianorosa\GeoLocation\Contracts\LookupInterface driver($name)
+ * @method static GeoLocationDetails lookup($ipAddress, $responseFilter = 'geo')
+ * @method static \Adrianorosa\GeoLocation\Contracts\LookupInterface driver($name)
  *
  * @see \Adrianorosa\GeoLocation\Providers\IpInfo
  */
